@@ -1,0 +1,45 @@
+include: package:flutter_lints/flutter.yaml
+
+linter: 
+  rules: 
+    prefer_relative_imports: true
+
+analyzer:
+  plugins:
+    - dart_code_metrics
+
+  enable-experiment:
+    - extension-methods
+
+  exclude:
+    - lib/**/**/*.freezed.dart
+    - lib/**/**/**/**/*.freezed.dart
+    - lib/**/**/*.g.dart
+    - lib/**/**/**/**/*.g.dart
+    - lib/**/**/*.gr.dart
+    - lib/**/**/**/**/*.gr.dart
+
+  errors:
+    missing_return: error
+    public_member_api_docs: ignore
+    lines_longer_than_80_chars: ignore
+    constant_identifier_names: ignore
+    no_logic_in_create_state: ignore
+
+dart_code_metrics:
+  metrics:
+    maximum-nesting-level: 5
+    source-lines-of-code: 60
+  metrics-exclude:
+    - test/**
+  rules:
+    - binary-expression-operand-order
+    - double-literal-format
+    - no-boolean-literal-compare
+    - no-equal-then-else
+    - always-remove-listener
+    - avoid-non-null-assertion
+    - avoid-unused-parameters
+    - no-magic-number
+    - prefer-trailing-comma
+    - avoid-wrapping-in-padding
